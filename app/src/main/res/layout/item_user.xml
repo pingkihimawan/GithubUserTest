@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.github.userlist.data.model.GitUser" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvUserCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_default"
+        android:layout_marginStart="@dimen/padding_default"
+        android:layout_marginEnd="@dimen/padding_default"
+        app:cardCornerRadius="@dimen/padding_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvUserAvatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_default"
+                android:layout_marginTop="@dimen/padding_default"
+                android:layout_marginBottom="@dimen/padding_default"
+                app:cardBackgroundColor="@color/color_primary_dark"
+                app:cardCornerRadius="@dimen/padding_default"
+                app:cardPreventCornerOverlap="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/civUserAvatar"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvLoginUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_default"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{user.login}"
+                android:textSize="@dimen/text_default"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/cvUserAvatar"
+                app:layout_constraintTop_toTopOf="@id/cvUserAvatar"
+                app:layout_constraintBottom_toBottomOf="@id/cvUserAvatar"
+                tools:text="username" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

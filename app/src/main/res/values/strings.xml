@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Github Userlist</string>
+    <string name="btn_retry">Retry</string>
+    <string name="btn_detail">Detail</string>
+</resources>
